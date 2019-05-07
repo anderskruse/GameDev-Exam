@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject player;
+    public float speed = 8f;
 
     void Start()
     {
@@ -16,16 +16,16 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player.transform.Translate(0f, 0f, 8f * Time.deltaTime);
+        transform.Translate(0f, 0f, speed * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.A))
         {
-            player.transform.Translate(-8f * Time.deltaTime, 0f, 0f);
+            transform.Translate(-8f * Time.deltaTime, 0f, 0f);
 
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            player.transform.Translate(8f * Time.deltaTime, 0f, 0f);
+            transform.Translate(8f * Time.deltaTime, 0f, 0f);
 
         }
 

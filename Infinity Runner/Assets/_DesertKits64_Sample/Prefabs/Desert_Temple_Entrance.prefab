@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000014190666842}
   - component: {fileID: 23000014044881256}
   - component: {fileID: 2106408133079010516}
+  - component: {fileID: 8839870730152274672}
   m_Layer: 0
   m_Name: Desert_Temple_Entrance
   m_TagString: Untagged
@@ -91,3 +92,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2796447, y: 2.0666578, z: 1.2276402}
   m_Center: {x: -0.00000008940697, y: 1.0333289, z: 0}
+--- !u!114 &8839870730152274672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011859241944}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5449d2f105de448bf3d0d64dd2f43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamecontroller: {fileID: 0}
