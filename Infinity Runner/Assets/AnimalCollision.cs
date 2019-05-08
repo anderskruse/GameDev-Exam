@@ -24,7 +24,6 @@ public class AnimalCollision : MonoBehaviour
         
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Bimmelim");
             //Enable random environment and animal
             lc.StartRandomLevel();
 
