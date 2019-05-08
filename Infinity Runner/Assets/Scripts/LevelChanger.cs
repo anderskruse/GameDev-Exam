@@ -5,11 +5,10 @@ using UnityEngine;
 public class LevelChanger : MonoBehaviour
 {
 
-    public GameObject gamecontroller;
-
+    public GameObject[] environments;
+    public int currEnvironment = 0;
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -18,13 +17,28 @@ public class LevelChanger : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision other)
+    public void StartRandomLevel()
     {
-        if (other.gameObject.tag == "Player")
-        {
-            //Instantiate(horse, spawnpoint.transform.position, Quaternion.identity);
-
-        }
+        StartCoroutine(RandomLevel());
     }
 
+
+    public IEnumerator RandomLevel()
+    {
+        //Make random number based on the amounts of environments
+        int rand = Random.Range(0, environments.Length);
+
+        //Enable environment based on the random number
+        while (environments[rand].gameObject.activeSelf)
+        {
+            rand = Random.Range(0, environments.Length);
+        }
+        environments[rand].gameObject.SetActive(true);
+
+
+        //Swap camera to new animal
+
+
+        yield return null;
+    }
 }

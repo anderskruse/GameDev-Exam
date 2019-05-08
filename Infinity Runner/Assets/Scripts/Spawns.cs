@@ -9,18 +9,15 @@ public class Spawns : MonoBehaviour
     public GameObject camel;
     public GameObject horse;
 
-
     void Start()
     {
-        Instantiate(camel, spawnpointDesert.transform.position, Quaternion.identity);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
 
 }

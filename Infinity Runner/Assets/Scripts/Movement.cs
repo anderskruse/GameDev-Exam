@@ -6,7 +6,6 @@ public class Movement : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed = 8f;
-    public GameObject player;
 
     //movements
     Vector3 forward;
@@ -19,7 +18,6 @@ public class Movement : MonoBehaviour
         left = new Vector3(-8f * Time.deltaTime, 0f, 0f);
         right = new Vector3(8f * Time.deltaTime, 0f, 0f);
 
-        player = GameObject.FindGameObjectWithTag("Player");
 
     }
 
@@ -43,25 +41,20 @@ public class Movement : MonoBehaviour
 
     private void MoveForward()
     {
-        player.transform.Translate(forward);
-        player.transform.rotation = Quaternion.LookRotation(forward);
+        transform.Translate(forward);
+        transform.rotation = Quaternion.LookRotation(forward);
     }
 
     private void TurnLeft()
     {
-        player.transform.Translate(left, Space.World);
-        player.transform.rotation = Quaternion.LookRotation(left + forward * 2);
+        transform.Translate(left, Space.World);
+        transform.rotation = Quaternion.LookRotation(left + forward * 2);
     }
 
     private void TurnRight()
     {
-        player.transform.Translate(right, Space.World);
-        player.transform.rotation = Quaternion.LookRotation(right + forward * 2);
-    }
-
-    public void UpdatePlayer(GameObject player)
-    {
-        this.player = player;
+        transform.Translate(right, Space.World);
+        transform.rotation = Quaternion.LookRotation(right + forward * 2);
     }
 
 }
