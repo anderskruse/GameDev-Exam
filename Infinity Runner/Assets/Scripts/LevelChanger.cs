@@ -6,7 +6,7 @@ public class LevelChanger : MonoBehaviour
 {
 
     public GameObject[] environments;
-    public int currEnvironment = 0;
+
     void Start()
     {
     }
@@ -36,8 +36,10 @@ public class LevelChanger : MonoBehaviour
         environments[rand].gameObject.SetActive(true);
 
 
-        //Swap camera to new animal
 
+        //Swap camera to new animal
+        GameObject player = environments[rand].gameObject.transform.GetChild(0).gameObject;
+        GetComponent<PlayerCamera>().updatePlayerObject(player);
 
         yield return null;
     }

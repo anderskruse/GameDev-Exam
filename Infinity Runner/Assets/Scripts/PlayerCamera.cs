@@ -23,9 +23,10 @@ public class PlayerCamera : MonoBehaviour
     }
 
 
-    void updatePlayerObject()
+    public void updatePlayerObject(GameObject player)
     {
-
+        this.player = player;
+        Debug.Log(player.name);
     }
 }
 
