@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spawnpoints
   - Environment
+  - Obstacle
   layers:
   - Default
   - TransparentFX
