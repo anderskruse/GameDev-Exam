@@ -9,8 +9,14 @@ public class LevelChanger : MonoBehaviour
     private UpdateScore score;
     public float scoreSpeed;
     float multiplier = 1.2f;
-    
+    private GameObject spawnArea;
+    public GameObject player;
 
+
+    void Awake()
+    {
+        StartCoroutine(RandomLevel());
+    }
 
     void Start()
     {
@@ -43,10 +49,12 @@ public class LevelChanger : MonoBehaviour
         }
         environments[rand].gameObject.SetActive(true);
 
-
+        //Spawn points on the activated map
+        spawnArea = environments[rand].gameObject.transform.GetChild(1).gameObject;
+        spawnArea.GetComponent<GeneratePickupsAndObstacles>().spawnPickups();
 
         //Swap camera to new animal
-        GameObject player = environments[rand].gameObject.transform.GetChild(0).gameObject;
+        player = environments[rand].gameObject.transform.GetChild(0).gameObject;
         GetComponent<PlayerCamera>().updatePlayerObject(player);
 
 
@@ -63,9 +71,12 @@ public class LevelChanger : MonoBehaviour
     private IEnumerator addToScore()
     {
         //increments the score corresponding to speed
-        yield return new WaitForSeconds(0.5f);
-        score.incrementScore((int)scoreSpeed);
-        StartCoroutine(addToScore());
+        if (player)
+        {
+            yield return new WaitForSeconds(0.5f);
+            score.incrementScore((int)scoreSpeed);
+            StartCoroutine(addToScore());
+        }
 
     }
 
@@ -74,5 +85,5 @@ public class LevelChanger : MonoBehaviour
         StartCoroutine(addToScore());
     }
 
-    
+
 }

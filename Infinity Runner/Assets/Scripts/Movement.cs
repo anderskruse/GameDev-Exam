@@ -14,18 +14,15 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        forward = new Vector3(0f, 0f, speed); //time.deltatime ????
-        left = new Vector3(-speed/2 * Time.deltaTime, 0f, 0f);
-        right = new Vector3(speed/2 * Time.deltaTime, 0f, 0f);
-
-
-
     }
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        forward = new Vector3(0f, 0f, speed * Time.fixedDeltaTime);
+        left = new Vector3(-speed / 2 * Time.fixedDeltaTime, 0f, 0f);
+        right = new Vector3(speed / 2 * Time.fixedDeltaTime, 0f, 0f);
 
         MoveForward();
         if (Input.GetKey(KeyCode.A))
@@ -41,21 +38,18 @@ public class Movement : MonoBehaviour
 
     private void MoveForward()
     {
-        Debug.Log(forward);
         transform.Translate(forward);
         transform.rotation = Quaternion.LookRotation(forward);
     }
 
     private void TurnLeft()
     {
-        Debug.Log(left);
         transform.Translate(left, Space.World);
         transform.rotation = Quaternion.LookRotation(left + forward * 2);
     }
 
     private void TurnRight()
     {
-        Debug.Log(right);
         transform.Translate(right, Space.World);
         transform.rotation = Quaternion.LookRotation(right + forward * 2);
     }
