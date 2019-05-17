@@ -30,7 +30,6 @@ public class PlayerCamera : MonoBehaviour
         switch (player.gameObject.name)
         {
             case "Penguin":
-                Debug.Log("Went in here");
                 customOffset = new Vector3(0f, -1f, 0f);
                 break;
 
