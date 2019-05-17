@@ -24,7 +24,7 @@ public class HitObstacle : MonoBehaviour
     {
         if(collision.gameObject.tag == "Obstacle")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             statusMessage.text = "GAME OVER";
             StartCoroutine(changeSceneCoroutine());
         } 
@@ -34,9 +34,9 @@ public class HitObstacle : MonoBehaviour
     {
         if (collision.gameObject.name == "Terrain")
         {
-            //gameObject.SetActive(false);
-            //statusMessage.text = "GAME OVER";
-            //StartCoroutine(changeSceneCoroutine());
+            gameObject.SetActive(false);
+            statusMessage.text = "GAME OVER";
+            StartCoroutine(changeSceneCoroutine());
         }
     }
 
@@ -46,7 +46,7 @@ public class HitObstacle : MonoBehaviour
         yield return new WaitForSeconds(5);
         print("hello2");
         SceneManager.LoadScene(0);
-        //changeScene();
+        
         
     }
 
