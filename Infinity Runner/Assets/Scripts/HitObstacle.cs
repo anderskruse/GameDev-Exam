@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 using System;
 
@@ -9,6 +8,8 @@ public class HitObstacle : MonoBehaviour
 {
     // Start is called before the first frame update
     public TextMeshProUGUI statusMessage;
+    public SceneChanger sc;
+    public LayerMask lm;
 
     void Start()
     {
@@ -24,9 +25,10 @@ public class HitObstacle : MonoBehaviour
     {
         if(collision.gameObject.tag == "Obstacle")
         {
+            Debug.Log("Obstacle");
+            sc.runCoroutine();
             gameObject.SetActive(false);
             statusMessage.text = "GAME OVER";
-            StartCoroutine(changeSceneCoroutine());
         } 
     }
 
@@ -34,25 +36,32 @@ public class HitObstacle : MonoBehaviour
     {
         if (collision.gameObject.name == "Terrain")
         {
+            Debug.Log("Terrain");
+            sc.runCoroutine();
             gameObject.SetActive(false);
             statusMessage.text = "GAME OVER";
-            StartCoroutine(changeSceneCoroutine());
         }
     }
 
-    private IEnumerator changeSceneCoroutine()
-    {
-        print("hello");
-        yield return new WaitForSeconds(5);
-        print("hello2");
-        SceneManager.LoadScene(0);
-        
-        
-    }
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.name == "Terrain")
+    //    {
+    //        StartCoroutine(awayFromTerrain());
+    //    }
+    //}
 
-    private void changeScene()
-    {
-        print("Hello3");
-        SceneManager.LoadScene("Main Menu");
-    }
+    //private IEnumerator awayFromTerrain()
+    //{
+    //    if(Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, ~lm))
+    //    {
+    //        Debug.Log("Terrain");
+    //        sc.runCoroutine();
+    //        gameObject.SetActive(false);
+    //        statusMessage.text = "GAME OVER";
+    //    }
+    //    yield return new WaitForSeconds(1f);
+
+    //}
+    
 }

@@ -10,16 +10,16 @@ public class LevelChanger : MonoBehaviour
     public float scoreSpeed;
     float multiplier = 1.2f;
     private GameObject spawnArea;
-    public GameObject player;
+    private GameObject player;
 
 
     void Awake()
     {
-        StartCoroutine(RandomLevel());
     }
 
     void Start()
     {
+        StartCoroutine(RandomLevel());
         StartCoroutine(addToScore());
         score = GetComponent<UpdateScore>();
 
@@ -71,7 +71,7 @@ public class LevelChanger : MonoBehaviour
     private IEnumerator addToScore()
     {
         //increments the score corresponding to speed
-        if (player)
+        if (player.activeSelf)
         {
             yield return new WaitForSeconds(0.5f);
             score.incrementScore((int)scoreSpeed);

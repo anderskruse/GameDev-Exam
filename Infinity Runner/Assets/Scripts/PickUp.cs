@@ -20,7 +20,7 @@ public class PickUp : MonoBehaviour
     {
         if(collider.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
 
             score.incrementScore();
             
