@@ -8,7 +8,7 @@ public class LevelChanger : MonoBehaviour
     public GameObject[] environments;
     private UpdateScore score;
     public float scoreSpeed;
-    float multiplier = 1.2f;
+    float multiplier = 1.5f;
     private GameObject spawnArea;
     private GameObject player;
 

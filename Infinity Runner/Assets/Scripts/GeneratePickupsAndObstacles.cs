@@ -70,7 +70,7 @@ public class GeneratePickupsAndObstacles : MonoBehaviour
 
         for (int i = 0; i < amountOfObstacles; i++)
         {
-            pos = new Vector3(Random.Range(-size.x / 2, size.x / 2) + transform.localPosition.x, 0, (size.z / amountOfObstacles+ 10) * i);
+            pos = new Vector3(Random.Range(-size.x / 2, size.x / 2) + transform.localPosition.x, 0, (size.z / amountOfObstacles) * (i + 1));
             var myObstacle = oop.GetPooledObject();
             if (!myObstacle)
             {
