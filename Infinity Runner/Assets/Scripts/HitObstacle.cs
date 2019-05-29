@@ -10,9 +10,13 @@ public class HitObstacle : MonoBehaviour
     public TextMeshProUGUI statusMessage;
     public SceneChanger sc;
     public LayerMask lm;
+    AudioSource audioSource;
+    public AudioClip deathClip;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class HitObstacle : MonoBehaviour
         if(collision.gameObject.tag == "Obstacle")
         {
 
+            audioSource.PlayOneShot(deathClip);
             sc.runCoroutine();
             gameObject.SetActive(false);
             statusMessage.text = "GAME OVER";
@@ -36,32 +41,12 @@ public class HitObstacle : MonoBehaviour
     {
         if (collision.gameObject.name == "Terrain")
         {
+            audioSource.PlayOneShot(deathClip);
             Debug.Log("Terrain");
             sc.runCoroutine();
             gameObject.SetActive(false);
             statusMessage.text = "GAME OVER";
         }
     }
-
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.gameObject.name == "Terrain")
-    //    {
-    //        StartCoroutine(awayFromTerrain());
-    //    }
-    //}
-
-    //private IEnumerator awayFromTerrain()
-    //{
-    //    if(Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, ~lm))
-    //    {
-    //        Debug.Log("Terrain");
-    //        sc.runCoroutine();
-    //        gameObject.SetActive(false);
-    //        statusMessage.text = "GAME OVER";
-    //    }
-    //    yield return new WaitForSeconds(1f);
-
-    //}
     
 }

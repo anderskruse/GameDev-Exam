@@ -12,6 +12,7 @@ public class LevelChanger : MonoBehaviour
     float multiplier = 1.5f;
     private GameObject spawnArea;
     private GameObject player;
+    AudioSource runSound;
 
 
     void Awake()
@@ -61,11 +62,14 @@ public class LevelChanger : MonoBehaviour
         player = environments[rand].gameObject.transform.GetChild(0).gameObject;
         GetComponent<PlayerCamera>().updatePlayerObject(player);
 
+  
+
+
         //Player powerup update
         powerUp.updatePlayerObject(player);
         powerUp.activated = false;
 
-        //amount to increment the score with each time a level is loaded
+        //Amount to increment the score with each time a level is loaded
         scoreSpeed *= multiplier;
 
         ////Increment player speed after each reload

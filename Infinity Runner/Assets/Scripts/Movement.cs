@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     public float speed;
 
+
     //movements
     Vector3 forward;
     Vector3 left;
@@ -14,12 +15,21 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+
     }
 
+    void Update()
+    {
+        ////Get sounds from player
+        //runSound = GetComponent<AudioSource>();
+        //runSound.loop = true;
+        //runSound.Play();
+    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+
         forward = new Vector3(0f, 0f, speed * Time.fixedDeltaTime);
         left = new Vector3(-speed / 2 * Time.fixedDeltaTime, 0f, 0f);
         right = new Vector3(speed / 2 * Time.fixedDeltaTime, 0f, 0f);
