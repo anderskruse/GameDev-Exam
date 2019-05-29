@@ -33,16 +33,16 @@ public class HitObstacle : MonoBehaviour
         } 
     }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.name == "Terrain")
-        {
-            soundController.playDeathClip(gameObject);
-            Debug.Log("Terrain");
-            sc.runCoroutine();
-            gameObject.SetActive(false);
-            statusMessage.text = "GAME OVER";
-        }
-    }
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.name == "Terrain")
+    //    {
+    //        soundController.playDeathClip(gameObject);
+    //        Debug.Log("Terrain");
+    //        sc.runCoroutine();
+    //        gameObject.SetActive(false);
+    //        statusMessage.text = "GAME OVER";
+    //    }
+    //}
     
 }

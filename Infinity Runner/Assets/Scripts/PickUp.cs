@@ -28,6 +28,10 @@ public class PickUp : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
+        if(score == null)
+        {
+            score = GameObject.Find("GameController").GetComponent<UpdateScore>();
+        }
         if (collider.gameObject.tag == "Player")
         {
             gameObject.SetActive(false);

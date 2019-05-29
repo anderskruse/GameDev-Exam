@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ca8ad51ad43a441959192c121b93f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
-  pullForce: 20
+  range: 20
+  pullForce: 25
 --- !u!1 &7643869849914324843
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,8 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ca8ad51ad43a441959192c121b93f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
-  pullForce: 20
+  range: 20
+  pullForce: 25
 --- !u!1 &7643869850044308581
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,8 +391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ca8ad51ad43a441959192c121b93f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
-  pullForce: 20
+  range: 20
+  pullForce: 25
 --- !u!1 &7643869850184567792
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,8 +522,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ca8ad51ad43a441959192c121b93f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
-  pullForce: 20
+  range: 20
+  pullForce: 25
 --- !u!1 &7643869850305634566
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ca8ad51ad43a441959192c121b93f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 15
+  range: 20
   pullForce: 25
 --- !u!1 &7643869850710545106
 GameObject:
@@ -784,8 +784,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ca8ad51ad43a441959192c121b93f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
-  pullForce: 20
+  range: 20
+  pullForce: 25
 --- !u!1 &7643869851008752070
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,8 +915,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ca8ad51ad43a441959192c121b93f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
-  pullForce: 20
+  range: 20
+  pullForce: 25
 --- !u!1 &7643869851032080015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,8 +1046,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ca8ad51ad43a441959192c121b93f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
-  pullForce: 20
+  range: 20
+  pullForce: 25
 --- !u!1 &8861107399915556072
 GameObject:
   m_ObjectHideFlags: 0
