@@ -13,6 +13,7 @@ public class GeneratePickupsAndObstacles : MonoBehaviour
     private ObjectPooler oop;
     public GameObject gemPooler;
     public GameObject obstaclePooler;
+    public PowerUp powerUp;
 
     void Awake()
     {
@@ -53,11 +54,18 @@ public class GeneratePickupsAndObstacles : MonoBehaviour
             {
                 return;
             }
+
+            myGem.transform.position = new Vector3(0, 0, 0);
+            var myGemChildren = myGem.GetComponentsInChildren<Transform>();
+            //for (int j = 0; j < myGemChildren.Length; i++)
+            //{
+            //    myGemChildren[j].position = new Vector3(0, 1, j * 2);
+            //}
+
+
             myGem.transform.position = pos;
             myGem.SetActive(true);
-
         }
-        spawnObstacles();
     }
 
     public void spawnObstacles()
@@ -80,5 +88,14 @@ public class GeneratePickupsAndObstacles : MonoBehaviour
             myObstacle.SetActive(true);
 
         }
+
+        
+    }
+
+    public void spawnPowerUps()
+    {
+        pos = new Vector3(Random.Range(-size.x / 2, size.x / 2) + transform.localPosition.x, 0.5f, Random.Range(size.z / 2, 0));
+        powerUp.transform.position = pos;
+
     }
 }

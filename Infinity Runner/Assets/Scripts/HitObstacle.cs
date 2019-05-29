@@ -25,7 +25,7 @@ public class HitObstacle : MonoBehaviour
     {
         if(collision.gameObject.tag == "Obstacle")
         {
-            Debug.Log("Obstacle");
+
             sc.runCoroutine();
             gameObject.SetActive(false);
             statusMessage.text = "GAME OVER";

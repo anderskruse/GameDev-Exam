@@ -8,6 +8,7 @@ TagManager:
   - Environment
   - Obstacle
   - ChangeLevel
+  - PowerUp
   layers:
   - Default
   - TransparentFX

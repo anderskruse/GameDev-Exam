@@ -7,6 +7,7 @@ public class LevelChanger : MonoBehaviour
 
     public GameObject[] environments;
     private UpdateScore score;
+    public PowerUp powerUp;
     public float scoreSpeed;
     float multiplier = 1.5f;
     private GameObject spawnArea;
@@ -49,14 +50,20 @@ public class LevelChanger : MonoBehaviour
         }
         environments[rand].gameObject.SetActive(true);
 
-        //Spawn points on the activated map
+        //Spawn objects on on the activated map
         spawnArea = environments[rand].gameObject.transform.GetChild(1).gameObject;
         spawnArea.GetComponent<GeneratePickupsAndObstacles>().spawnPickups();
+        spawnArea.GetComponent<GeneratePickupsAndObstacles>().spawnObstacles();
+        spawnArea.GetComponent<GeneratePickupsAndObstacles>().spawnPowerUps();
+
 
         //Swap camera to new animal
         player = environments[rand].gameObject.transform.GetChild(0).gameObject;
         GetComponent<PlayerCamera>().updatePlayerObject(player);
 
+        //Player powerup update
+        powerUp.updatePlayerObject(player);
+        powerUp.activated = false;
 
         //amount to increment the score with each time a level is loaded
         scoreSpeed *= multiplier;

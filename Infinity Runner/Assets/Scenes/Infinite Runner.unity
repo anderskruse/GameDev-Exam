@@ -498,7 +498,6 @@ GameObject:
   m_Component:
   - component: {fileID: 212188244}
   - component: {fileID: 212188246}
-  - component: {fileID: 212188247}
   - component: {fileID: 212188245}
   - component: {fileID: 212188248}
   - component: {fileID: 212188249}
@@ -539,6 +538,7 @@ MonoBehaviour:
   - {fileID: 13601966}
   - {fileID: 2009007032}
   - {fileID: 1805898332}
+  powerUp: {fileID: 1323812416}
   scoreSpeed: 5
 --- !u!114 &212188246
 MonoBehaviour:
@@ -553,22 +553,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 534669902}
---- !u!114 &212188247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 212188243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 995582f689a9b5749ac504a6dc8a3e1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnpointDesert: {fileID: 1837207194}
-  spawnpointForest: {fileID: 2049113160}
-  camel: {fileID: 1565308869772588, guid: bf4e6442d6418c24ea5a9fd416495a40, type: 3}
-  horse: {fileID: 1222318310356142, guid: 3710beba7065ec24f9eb783d2cc40092, type: 3}
 --- !u!114 &212188248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1094,6 +1078,7 @@ MonoBehaviour:
   amountOfObstacles: 10
   gemPooler: {fileID: 1600466830}
   obstaclePooler: {fileID: 1824068460}
+  powerUp: {fileID: 1323812416}
 --- !u!4 &495685711
 Transform:
   m_ObjectHideFlags: 0
@@ -1529,6 +1514,7 @@ MonoBehaviour:
   amountOfObstacles: 10
   gemPooler: {fileID: 1600466830}
   obstaclePooler: {fileID: 1824068460}
+  powerUp: {fileID: 1323812416}
 --- !u!1 &1065818282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,7 +1610,7 @@ PrefabInstance:
     - target: {fileID: 4189596206345060894, guid: bf4e6442d6418c24ea5a9fd416495a40,
         type: 3}
       propertyPath: speed
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4189596206345060894, guid: bf4e6442d6418c24ea5a9fd416495a40,
         type: 3}
@@ -2166,8 +2152,63 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7643869849914324840, guid: 66a263194b0b6a042a0db6640ba5f840,
+        type: 3}
+      propertyPath: powerUp
+      value: 
+      objectReference: {fileID: 1323812416}
+    - target: {fileID: 7643869850184567793, guid: 66a263194b0b6a042a0db6640ba5f840,
+        type: 3}
+      propertyPath: powerUp
+      value: 
+      objectReference: {fileID: 1323812416}
+    - target: {fileID: 7643869851008752071, guid: 66a263194b0b6a042a0db6640ba5f840,
+        type: 3}
+      propertyPath: powerUp
+      value: 
+      objectReference: {fileID: 1323812416}
+    - target: {fileID: 7643869851032080012, guid: 66a263194b0b6a042a0db6640ba5f840,
+        type: 3}
+      propertyPath: powerUp
+      value: 
+      objectReference: {fileID: 1323812416}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66a263194b0b6a042a0db6640ba5f840, type: 3}
+--- !u!1 &1323812414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000010728489230, guid: 8b40cffea67202d4bbf662b25de4c94a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2064908574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1323812415
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323812414}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.1126643
+  m_Center: {x: -0.00000047683716, y: 0, z: -0.00000017881398}
+--- !u!114 &1323812416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323812414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9e87221644f714e93d083f0717f002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 4
+  pullForce: 5
+  activated: 0
+  turnSpeed: 360
 --- !u!1 &1352135029
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,7 +2327,7 @@ PrefabInstance:
     - target: {fileID: 6675304151823950894, guid: 3710beba7065ec24f9eb783d2cc40092,
         type: 3}
       propertyPath: speed
-      value: 25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1861220237132216, guid: 3710beba7065ec24f9eb783d2cc40092, type: 3}
       propertyPath: m_Layer
@@ -3166,6 +3207,93 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 369375543}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2064908574
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1000010728489230, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_Name
+      value: MagnetPowerup
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010728489230, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_TagString
+      value: PowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010728489230, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013225348790, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 50.31349
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013225348790, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013225348790, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 24.27123
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013225348790, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013225348790, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013225348790, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013225348790, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013225348790, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013225348790, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013225348790, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013225348790, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013225348790, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.45009
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013225348790, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.45009
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013225348790, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.45009
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011891754906, guid: 8b40cffea67202d4bbf662b25de4c94a,
+        type: 3}
+      propertyPath: isFloating
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011891754906, guid: 8b40cffea67202d4bbf662b25de4c94a,
+        type: 3}
+      propertyPath: isScaling
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
 --- !u!1 &2115254312
 GameObject:
   m_ObjectHideFlags: 0
@@ -3393,6 +3521,7 @@ MonoBehaviour:
   amountOfObstacles: 10
   gemPooler: {fileID: 1600466830}
   obstaclePooler: {fileID: 1824068460}
+  powerUp: {fileID: 1323812416}
 --- !u!1001 &7641240133001617081
 PrefabInstance:
   m_ObjectHideFlags: 0
