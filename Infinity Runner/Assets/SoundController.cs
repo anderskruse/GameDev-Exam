@@ -5,12 +5,11 @@ using UnityEngine;
 public class SoundController : MonoBehaviour
 {
 
-    AudioSource audioSource;
-    public AudioClip deathClip;
+    public AudioClip[] deathClips;
+
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -20,9 +19,25 @@ public class SoundController : MonoBehaviour
 
     }
 
-    private IEnumerator playDeathClip()
+    public void playDeathClip(GameObject player)
     {
-        audioSource.PlayOneShot(deathClip);
-        yield return null;
+        switch (player.name)
+        {
+            case "Camel":
+                AudioSource.PlayClipAtPoint(deathClips[0], player.transform.position, 1f);
+                break;
+
+            case "Horse":
+                AudioSource.PlayClipAtPoint(deathClips[1], player.transform.position, 1f);
+                break;
+
+            case "Penguin":
+                AudioSource.PlayClipAtPoint(deathClips[2], player.transform.position, 1f);
+                break;
+
+            default:
+                break;
+        }
+
     }
 }

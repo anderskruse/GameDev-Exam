@@ -9,13 +9,10 @@ public class HitObstacle : MonoBehaviour
     // Start is called before the first frame update
     public TextMeshProUGUI statusMessage;
     public SceneChanger sc;
-    public LayerMask lm;
-    AudioSource audioSource;
-    public AudioClip deathClip;
+    public SoundController soundController;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -29,8 +26,7 @@ public class HitObstacle : MonoBehaviour
     {
         if(collision.gameObject.tag == "Obstacle")
         {
-
-            audioSource.PlayOneShot(deathClip);
+            soundController.playDeathClip(gameObject);
             sc.runCoroutine();
             gameObject.SetActive(false);
             statusMessage.text = "GAME OVER";
@@ -41,7 +37,7 @@ public class HitObstacle : MonoBehaviour
     {
         if (collision.gameObject.name == "Terrain")
         {
-            audioSource.PlayOneShot(deathClip);
+            soundController.playDeathClip(gameObject);
             Debug.Log("Terrain");
             sc.runCoroutine();
             gameObject.SetActive(false);

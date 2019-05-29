@@ -48,15 +48,15 @@ public class GeneratePickupsAndObstacles : MonoBehaviour
 
         for (int i = 0; i < amountOfpickups; i++)
         {
-            pos = new Vector3(Random.Range(-size.x / 2, size.x / 2) + transform.localPosition.x, 0, (size.z/amountOfpickups)*i);
+            pos = new Vector3(Random.Range(-size.x / 2, size.x / 2) + transform.localPosition.x, 0, (transform.localPosition.z - (size.z / 2)) + i * (size.z / amountOfpickups));
             var myGem = gop.GetPooledObject();
             if (!myGem)
             {
                 return;
             }
-
-            myGem.transform.position = new Vector3(0, 0, 0);
-            var myGemChildren = myGem.GetComponentsInChildren<Transform>();
+            
+            //myGem.transform.position = new Vector3(0, 0, 0);
+            //var myGemChildren = myGem.GetComponentsInChildren<Transform>();
             //for (int j = 0; j < myGemChildren.Length; i++)
             //{
             //    myGemChildren[j].position = new Vector3(0, 1, j * 2);
@@ -94,7 +94,7 @@ public class GeneratePickupsAndObstacles : MonoBehaviour
 
     public void spawnPowerUps()
     {
-        pos = new Vector3(Random.Range(-size.x / 2, size.x / 2) + transform.localPosition.x, 0.5f, Random.Range(size.z / 2, 0));
+        pos = new Vector3(Random.Range(-size.x / 4, size.x / 4) + transform.localPosition.x, 0.5f, Random.Range(-size.z / 2 + transform.localPosition.z, transform.localPosition.z));
         powerUp.transform.position = pos;
 
     }

@@ -9,7 +9,7 @@ public class LevelChanger : MonoBehaviour
     private UpdateScore score;
     public PowerUp powerUp;
     public float scoreSpeed;
-    float multiplier = 1.5f;
+    float multiplier = 1.3f;
     private GameObject spawnArea;
     private GameObject player;
     AudioSource runSound;
@@ -73,7 +73,7 @@ public class LevelChanger : MonoBehaviour
         scoreSpeed *= multiplier;
 
         ////Increment player speed after each reload
-        player.GetComponent<Movement>().speed *= multiplier;
+        player.GetComponent<Movement>().speed += 5 * multiplier;
 
 
         yield return null;

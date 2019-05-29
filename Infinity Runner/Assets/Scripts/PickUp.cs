@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    public PowerUp powerUp;
+    private PowerUp powerUp;
     private UpdateScore score;
     private GameObject player;
+    public int range;
+    public int pullForce;
 
     void Start()
     {
@@ -18,9 +20,9 @@ public class PickUp : MonoBehaviour
     void Update()
     {   
         //Create a manget pulling effect towards Player if magnet power up is activated
-        if (powerUp.activated && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 5)
+        if (powerUp.activated && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < range)
         {
-            transform.position = Vector3.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, Time.deltaTime * 10);
+            transform.position = Vector3.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, Time.deltaTime * pullForce);
         }
     }
 

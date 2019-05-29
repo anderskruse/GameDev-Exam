@@ -55,13 +55,13 @@ public class Movement : MonoBehaviour
     private void TurnLeft()
     {
         transform.Translate(left, Space.World);
-        transform.rotation = Quaternion.LookRotation(left + forward * 2);
+        transform.rotation = Quaternion.LookRotation(left + forward * 1.5f);
     }
 
     private void TurnRight()
     {
         transform.Translate(right, Space.World);
-        transform.rotation = Quaternion.LookRotation(right + forward * 2);
+        transform.rotation = Quaternion.LookRotation(right + forward * 1.5f);
     }
 
 
